@@ -1,0 +1,72 @@
+body {
+  background-color: #1c2c4c;
+  text-align: center;
+  color: #f3f3ff;
+  max-width: 480px;
+  margin: auto;
+}
+
+a {
+  color: #f3f3ff;
+}
+
+#remix-link {
+  font-size: 18px;
+}
+
+h1 {
+  font-family: sans-serif
+}
+
+p, label, output {
+  font-size: 18px;
+}
+
+#save-image-link {
+  margin:auto;
+}
+
+canvas { 
+  display: block;
+  height: auto; 
+  width: auto; 
+  max-width: 400px; 
+  max-height: none;
+  margin: auto;
+  box-shadow: 0 0 8px 0px black;
+}
+
+form#customize-form {
+  text-align: left;
+  margin-bottom: 1em;
+}
+
+form#customize-form  fieldset {
+  border-radius: 6px
+}
+
+form#customize-form input[type="submit"] {
+  float: right;
+  font-size: 24px;
+}
+
+.input-group {
+  margin: 15px auto;
+  width: 300px
+}
+
+.input-group .range-label {
+  display: block;
+}
+
+.input-group .range-output {
+  font-family: monospace;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 0.5em;
+}
+
+.input-group input[type="range"] {
+  height: 10px;
+  width: 200px;
+}
