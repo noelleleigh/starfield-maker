@@ -8,3 +8,7 @@ A single-page app that generates procedural starfields suitable for smartphone b
   * Shooting stars
   * planets
   * galaxies
+
+## Credits
+* Star colors from [Mitchell Charity](http://www.vendian.org/mncharity/dir3/starcolor/)
+* Dither gradient library from [Dan Gries](http://rectangleworld.com/blog/archives/713)
