@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Starfield Maker</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/DitheredLinearGradientRGB.js" defer></script>
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <h1>✨ Starfield Maker ✨</h1>
+    <p>
+      Click the <code>Regenerate</code> button to get a new procedurally generated starfield.
+    </p>
+    <p>
+      Click the starfield to download a 1080x1920 PNG version. Makes for a great lockscreen 📲
+    </p>
+    <form id="customize-form">
+      <fieldset>
+        <legend>Customize your starfield!</legend>
+        <div class="input-group">
+          <label for="range-star-count" class="range-label">Star Count</label>
+          <div class="input-group">
+            <input type="range" name="starCount" id="range-star-count" min="50" max="1000" step="10" value="150">
+            <output name="star-count-output" for="range-star-count" form="customize-form" class="range-output">150</output>  
+          </div>
+        </div>
+        <div class="input-group">
+          <input type="checkbox" name="starColors" id="toggle-star-colors" checked>
+          <label for="toggle-star-colors">Star Colors</label>
+        </div>
+        <div class="input-group">
+          <input type="checkbox" name="brightConcentration" id="toggle-bright-concentration" checked>
+          <label for="toggle-bright-concentration">Concentrate Brighter Stars</label>
+        </div>
+        <div class="input-group">
+          <input type="checkbox" name="glowBand" id="toggle-glow-band" checked>
+          <label for="toggle-glow-band">Glow Band</label>  
+        </div>
+        <div class="input-group" id="glow-band-intensity-group">
+          <label for="range-glow-band-intensity" class="range-label">Glow Band Intensity</label>
+          <div class="input-group">
+            <input type="range" name="glowBandIntensity" id="range-glow-band-intensity" min="0" max="40" step="1" value="20">
+            <output name="glow-band-intensity-output" for="range-glow-band-intensity" form="customize-form" class="range-output">20</output>  
+          </div>
+        </div>
+      <input type="submit" value="Regenerate">
+      </fieldset>
+    </form>
+    <a id="save-image-link" download alt="Save Starfield (1080x1920)">
+      <canvas id="star-canvas" width="1080" height="1920" alt="Procedurally generated starfield">
+        Sorry, your browser doesn't support the <code>&lt;canvas&gt;</code> element.
+      </canvas>
+    </a>
+    
+    <footer>
+      <p id="remix-link">
+        <a href="https://glitch.com/edit/#!/remix/starfield-maker" target="_blank">🎏 Remix on Glitch</a>
+    </p>
+      <p>
+        Star colors from <a href="http://www.vendian.org/mncharity/dir3/starcolor/">Mitchell Charity</a>
+      </p>
+      <p>
+        Dither gradient library from <a href="http://rectangleworld.com/blog/archives/713">Dan Gries</a>
+      </p>
+    </footer>
+  </body>
+</html>
