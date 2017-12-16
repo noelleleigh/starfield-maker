@@ -167,6 +167,13 @@ const displayRangeOutput = outputElement => (event) => {
   outputElement.textContent = event.target.value; // eslint-disable-line no-param-reassign
 };
 
+// Get options from a form, render a starfield, and update the download link
+const generateFromForm = function generateStarfieldFromForm(canvas, form, downloadLink) {
+  const formContents = formToJson(form);
+  drawStarfield(canvas.getContext('2d'), canvas.width, canvas.height, formContents);
+  downloadLink.href = canvas.toDataURL(); // eslint-disable-line no-param-reassign
+};
+
 // EXECUTION
 const canvas = document.getElementById('star-canvas');
 if (!canvas.getContext) {
@@ -178,10 +185,8 @@ const form = document.querySelector('#customize-form');
 
 // Setup event listeners
 form.addEventListener('submit', (event) => {
-  event.preventDefault()
-  const formContents = formToJson(event.target)
-  drawStarfield(canvas.getContext('2d'), canvas.width, canvas.height, formContents);
-  saveImageLink.href = canvas.toDataURL();
+  event.preventDefault();
+  generateFromForm(canvas, event.target, saveImageLink);
 });
 
 form.querySelector('input[name="glowBand"]').addEventListener('change', (event) => {
@@ -199,6 +204,4 @@ form.querySelector('input[name="starCount"]').addEventListener('input', displayR
 form.querySelector('input[name="glowBandIntensity"]').addEventListener('input', displayRangeOutput(form.querySelector('output[name="glow-band-intensity-output"]')));
 
 // Render a starfield on page load
-const formContents = formToJson(form)
-drawStarfield(canvas.getContext('2d'), canvas.width, canvas.height, formContents);
-saveImageLink.href = canvas.toDataURL();
+generateFromForm(canvas, form, saveImageLink);
