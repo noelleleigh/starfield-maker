@@ -1,3 +1,5 @@
+**[Moved to Sourcehut](https://git.sr.ht/~noelle/starfield-maker)**
+
 # Starfield Maker
 
 A single-page app that generates customizable procedural starfields suitable for smartphone backgrounds. Uses the `canvas` API.
